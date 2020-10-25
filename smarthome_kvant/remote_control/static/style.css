@@ -1,0 +1,66 @@
+.nav_bar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 500%;
+    background-color: #2196F3;
+    font-size: 1em;
+}
+
+.image{
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    right: 50px;
+    top: calc(50% - 40px);
+}
+
+.temperature {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: auto;
+}
+
+.led_1 {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: auto;
+    margin-left: calc(25% - 200px);
+}
+
+.led_2 {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: auto;
+    margin-left: calc(75% - 75px);
+}
+
+body {
+    background-color: white;
+}
