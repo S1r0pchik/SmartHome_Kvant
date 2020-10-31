@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import on_off_position
 
-# Register your models here.
+admin.site.register(on_off_position)

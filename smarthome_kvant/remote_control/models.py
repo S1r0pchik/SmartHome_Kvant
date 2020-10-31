@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class on_off_position(models.Model):
+    position = models.IntegerField()
+
+    def __str__(self):
+        return self.position

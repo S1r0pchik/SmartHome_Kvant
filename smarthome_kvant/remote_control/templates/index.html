@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/static/CSS/style.css">
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
@@ -6,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <img class = "temperature" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png">
-    <img class = "led_1" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
-    <img class = "led_2" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
+    <a href = "{% url 'led_1_site' %}" class = "led_1"><img style = "width: 250px; height: 250px;" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png"></a>
+    <a class = "temperature"><img style = "width: 250px; height: 250px;" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png"></a>
+    <a class = "led_2"><img style = "width: 250px; height: 250px;" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png"></a>
 {% endblock %}
