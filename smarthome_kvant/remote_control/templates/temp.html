@@ -11,5 +11,10 @@
     <form method="post">
         {% csrf_token %}
         <button class = "btn" type="submit" position="on">Вкл/Выкл</button>
+
     </form>
+
+{% endblock %}
+{% block f %}
+<h1 class = 'temp'>{{ temp }}</h1>
 {% endblock %}

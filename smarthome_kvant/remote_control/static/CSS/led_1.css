@@ -1,3 +1,7 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 .nav_bar{
     width: 100%;
     position: absolute;
@@ -39,4 +43,9 @@
     right: 0;
     padding: 10px;
     margin: auto;
+}
+.temp{
+    top: 500px;
+    left: 47%;
+    position: fixed;
 }

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import PositionLedForm
 from .models import on_off_position, temp_on_off
-
+from random import randint
 
 def index(request):
 	return render(request, 'index.html')
@@ -27,4 +27,8 @@ def temp(request):
 		mod = 1
 	b = temp_on_off(position=mod)
 	b.save()
-	return render(request, 'temp.html')
+	rand = int(randint(-30, 25))
+	form = temp_on_off(temp=rand)
+	form.save()
+	data = {"temp": rand}
+	return render(request, 'temp.html', context= data)
