@@ -30,6 +30,7 @@
 }
 
 .btn{
+    cursor: pointer;
     width: 200px;
     height: 50px;
     position: absolute;
@@ -42,7 +43,7 @@
 }
 
 .pos{
-    width: 291px;
+    width: 250px;
     height: 100px;
     position: absolute;
     top: 400px;

@@ -18,7 +18,7 @@
 }
 
 .temperature {
-    cursor: pointer;
+    cursor: default;
     outline: none;
     border: 1px solid black;
     border-radius: 30px;
