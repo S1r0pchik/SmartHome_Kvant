@@ -14,14 +14,18 @@ def led_1(request):
 			mod = 0
 		if str(form) == '0':
 			mod = 1
-		b = on_off_position(position=mod)
-		b.save()
+		bd = on_off_position(position=mod)
+		bd.save()
 		if mod == 0:
 			position = "Лампа сейчас выключена"
 		if mod == 1:
 			position = "Лампа сейчас включена"
 	else:
 		form = on_off_position.objects.last()
+		if form == None:
+			mod = 0
+			bd = on_off_position(position=mod)
+			bd.save()
 		if int(str(form)) == 0:
 			position = "Лампа сейчас выключена"
 		if int(str(form)) == 1:
