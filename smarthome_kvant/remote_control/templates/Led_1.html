@@ -7,9 +7,15 @@
 {% endblock %}
 
 {% block content %}>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
     <img class = "Led" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
     <form method="post">
         {% csrf_token %}
-        <button class = "btn" type="submit" position="on">Вкл/Выкл</button>
+        <button class = "btn" name="dispatch" type="Submit">Вкл/Выкл</button>
+        <h2 class = "pos">{{ led_pos }}</h2>
     </form>
 {% endblock %}
