@@ -61,3 +61,6 @@ def led_1(request):
 		'led_pos': position,
 	}
 	return render(request, 'Led_1.html', context)
+
+def termometr(request):
+	return render(request, 'Termometr.html')

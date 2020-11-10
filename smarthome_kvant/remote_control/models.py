@@ -6,7 +6,3 @@ class on_off_position(models.Model):
 
     def __str__(self):
        return self.position
-#
-# class temp_on_off(models.Model):
-#     position = models.IntegerField()
-

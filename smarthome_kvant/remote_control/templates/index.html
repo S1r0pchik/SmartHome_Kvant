@@ -1,13 +1,15 @@
-<link rel="stylesheet" href="/static/CSS/style.css">
+<link rel="stylesheet" href="/static/CSS/Style.css">
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <h2 style="vertical-align: middle; display: inline-block; padding-left: 40px; color: white;">Smart Home</h2>
+    <button class = "home_btn">На главную</button>
     <img class = "image" src = "https://s.starladder.com/uploads/user_logo/e/2/f/e/f0d227746d98c02a794fcbf3b693cf8b.jpg">
 {% endblock %}
 
 {% block content %}
     <a href = "{% url 'led_1' %}" class = "led_1"><img style = "width: 250px; height: 250px;" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png"></a>
-    <a class = "temperature"><img style = "width: 250px; height: 250px;" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png"></a>
+    <a href = "{% url 'termometr' %}" class = "temperature"><img style = "width: 250px; height: 250px;" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png"></a>
     <a class = "led_2"><img style = "width: 250px; height: 250px;" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png"></a>
 {% endblock %}
