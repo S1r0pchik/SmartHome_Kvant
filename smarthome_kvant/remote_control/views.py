@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import PositionLedForm
 from .models import on_off_position
 from . import pyboard
-
+from .models import trm
 
 def index(request):
 	return render(request, 'index.html')
@@ -63,4 +63,5 @@ def led_1(request):
 	return render(request, 'Led_1.html', context)
 
 def termometr(request):
-	return render(request, 'Termometr.html')
+	izm = trm.objects.all()
+	return render(request, 'Termometr.html', {"izm": izm})
