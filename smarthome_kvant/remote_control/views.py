@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .forms import PositionLedForm
-from .models import on_off_position
+from .models import on_off_position, Termometr
 from . import pyboard
-
+import time
 
 def index(request):
 	return render(request, 'index.html')
@@ -63,4 +63,20 @@ def led_1(request):
 	return render(request, 'Led_1.html', context)
 
 def termometr(request):
-	return render(request, 'Termometr.html')
+	Table = Termometr.objects.order_by('-id')
+	import time, random
+	print(time.ctime().split()[3][3:8])
+	if (len(Table) > 5):
+		if (time.ctime().split()[3][3:8] == "00:00"):
+			t = Termometr.objects.first()
+			t.delete()
+			bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
+			bd.save()
+	else:
+		if (time.ctime().split()[3][3:8] == "00:00"):
+			bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
+			bd.save()
+	context = {
+		'Table': Table
+	}
+	return render(request, 'Termometr.html', context)
