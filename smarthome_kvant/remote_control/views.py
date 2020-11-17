@@ -3,6 +3,7 @@ from .forms import PositionLedForm
 from .models import on_off_position
 from . import pyboard
 from .models import trm
+from .models import rgb
 
 def index(request):
 	return render(request, 'index.html')
@@ -65,3 +66,11 @@ def led_1(request):
 def termometr(request):
 	izm = trm.objects.all()
 	return render(request, 'Termometr.html', {"izm": izm})
+
+def rgb_lamp(request):
+	color = rgb.objects.all()
+	r = color.r
+	g = color.g
+	b = color.b
+	color1 = hex(r * 65536 + g * 256 + b)
+	return render(request, 'rgb_lamp.html', {"color1": color1})

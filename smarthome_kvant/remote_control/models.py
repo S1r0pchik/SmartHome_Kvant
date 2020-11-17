@@ -12,3 +12,8 @@ class trm(models.Model):
     izm3 = models.IntegerField()
     izm4 = models.IntegerField()
     izm5 = models.IntegerField()
+
+class rgb(models.Model):
+    r = models.IntegerField()
+    g = models.IntegerField()
+    b = models.IntegerField()
