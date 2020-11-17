@@ -43,3 +43,11 @@ body {
     left: 5%;
     position: fixed;
 }
+
+.table{
+    border-radius: 30px;
+    position: fixed;
+    top: 100px;
+    width: 50%;
+    right: 100px;
+}
