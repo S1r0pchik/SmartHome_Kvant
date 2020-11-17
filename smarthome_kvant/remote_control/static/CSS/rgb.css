@@ -36,28 +36,10 @@ body {
     font-size: 20px;
 }
 
-.col{
+.temp{
     top: 200px;
     height: 390px;
     width: 320px;
     left: 5%;
     position: fixed;
-}
-
-.btn{
-    outline: none;
-    cursor: pointer;
-    border: solid 2px black;
-    border-radius: 40px;
-    padding: 30px 75px 30px 75px;
-    position: fixed;
-    top: 600px;
-    left: 6.2%;
-    font-size: 30px;
-}
-
-.item{
-    font-size: 20px;
-    text-align: center;
-    height: 75px;
 }
