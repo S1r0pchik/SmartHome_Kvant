@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -10,6 +10,20 @@ body{
     line-height: 500%;
     background-color: #2196F3;
     font-size: 1em;
+}
+
+.home_btn{
+    background-color: #1976D2;
+    height: 50px;
+    width: 150px;
+    top: 30%;
+    margin-left: 40px;
+    position: absolute;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .image{
@@ -34,6 +48,7 @@ body{
 }
 
 .btn{
+    cursor: pointer;
     width: 200px;
     height: 50px;
     position: absolute;
@@ -43,15 +58,14 @@ body{
     right: 0;
     padding: 10px;
     margin: auto;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
 }
-.temp{
-    top: 500px;
-    left: 47%;
-    position: fixed;
-}
+
 .pos{
-    width: auto;
-    height: auto;
+    width: 250px;
+    height: 100px;
     position: absolute;
     top: 400px;
     bottom: 0;

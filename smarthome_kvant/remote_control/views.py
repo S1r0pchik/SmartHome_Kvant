@@ -1,27 +1,58 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import PositionLedForm
-from .models import on_off_position, temp_on_off
-from random import randint
+from .models import on_off_position, Termometr
+from . import pyboard
+import time
 
 def index(request):
 	return render(request, 'index.html')
 
 
 def led_1(request):
+	try:
+		pyb = pyboard.Pyboard('COM7', 115200)
+		pyb.enter_raw_repl()
+	except:
+		position = "Ошибка подключения"
+		context = {
+			'led_pos': position,
+		}
+		return render(request, 'Led_1.html', context)
 	if 'dispatch' in request.POST:
 		form = on_off_position.objects.last()
 		if str(form) == '1':
 			mod = 0
 		if str(form) == '0':
 			mod = 1
-		b = on_off_position(position=mod)
-		b.save()
+		bd = on_off_position(position=mod)
+		bd.save()
+		try:
+			pyb.exec_("from pyb import Pin")
+			pyb.exec_("p_out = [Pin(i, Pin.OUT_PP) for i in ('D3','D5','D6') ]")
+		except:
+			pass
 		if mod == 0:
-			position = "Лампа сейчас выключена"
+			try:
+				pyb.exec_("p_out[0].off()")
+				pyb.exec_("p_out[1].off()")
+				pyb.exec_("p_out[2].off()")
+				position = "Лампа сейчас выключена"
+			except:
+				pass
 		if mod == 1:
+			try:
+				pyb.exec_("p_out[0].on()")
+				pyb.exec_("p_out[1].on()")
+				pyb.exec_("p_out[2].on()")
+			except:
+				pass
 			position = "Лампа сейчас включена"
 	else:
 		form = on_off_position.objects.last()
+		if form == None:
+			mod = 0
+			bd = on_off_position(position=mod)
+			bd.save()
 		if int(str(form)) == 0:
 			position = "Лампа сейчас выключена"
 		if int(str(form)) == 1:
@@ -31,22 +62,21 @@ def led_1(request):
 	}
 	return render(request, 'Led_1.html', context)
 
-def temp(request):
-	mod = 0
-	form = temp_on_off.objects.last()
-	if str(form) == '1':
-		mod = 0
-	if str(form) == '0':
-		mod = 1
-	rand = int(randint(-30, 25))
-	b = temp_on_off(position=mod, temp=rand)
-	b.save()
-	form = temp_on_off.objects.last()
-	if form == None:
-		mod = 0
-		bd = temp_on_off(position=mod, temp=rand)
-		bd.save()
-	data = {
-		"temp": rand
+def termometr(request):
+	Table = Termometr.objects.order_by('-id')
+	import time, random
+	print(time.ctime().split()[3][3:8])
+	if (len(Table) > 5):
+		if (time.ctime().split()[3][3:8] == "00:00"):
+			t = Termometr.objects.first()
+			t.delete()
+			bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
+			bd.save()
+	else:
+		if (time.ctime().split()[3][3:8] == "00:00"):
+			bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
+			bd.save()
+	context = {
+		'Table': Table
 	}
-	return render(request, 'temp.html', context= data)
+	return render(request, 'Termometr.html', context)

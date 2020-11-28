@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
     path('', views.index, name="home"),
     path('led_1', views.led_1, name="led_1"),
-    path('temp_1', views.temp, name="temp_site"),
+    path('termometr', views.termometr, name="termometr"),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
