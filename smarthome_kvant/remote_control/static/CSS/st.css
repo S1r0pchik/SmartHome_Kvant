@@ -1,0 +1,66 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav_bar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    background-color: #2196F3;
+    font-size: 1em;
+}
+
+.image{
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    right: 50px;
+    top: calc(50% - 40px);
+}
+
+.home_btn{
+    background-color: #1976D2;
+    height: 50px;
+    width: 150px;
+    top: 30%;
+    margin-left: 40px;
+    position: absolute;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.led_1 {
+    cursor: pointer;
+    outline: none;
+}
+
+.temperature {
+    cursor: pointer;
+    outline: none;
+}
+
+.led_2 {
+    cursor: pointer;
+    outline: none;
+}
+
+.add_led{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #1976D2;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    margin-left: 225px;
+    font-size: 20px;
+}
+.log{
+
+}
