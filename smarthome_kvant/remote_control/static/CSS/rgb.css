@@ -19,7 +19,7 @@ body {
     width: 5em;
     position: absolute;
     right: 50px;
-    top: calc(50% - 40px);
+    top: calc(50% - 50px);
 }
 
 .home_btn{
@@ -36,18 +36,35 @@ body {
     font-size: 20px;
 }
 
-.temp{
-    top: 200px;
-    height: 390px;
-    width: 320px;
-    left: 5%;
+.btn{
+    outline: none;
+    cursor: pointer;
+    padding: 30px 75px 30px 75px;
+    position: fixed;
+    top: 600px;
+    left: 6%;
+    font-size: 30px;
+}
+
+.rgb_img{
+    top: 150px;
+    height: 400px;
+    width: 400px;
+    left: 4%;
     position: fixed;
 }
 
 .table{
-    border-radius: 30px;
     position: fixed;
-    top: 100px;
-    width: 50%;
-    right: 100px;
+    top: 350px;
+    height: 300px;
+    width: 5%;
+    width: 15%;
+    right: 500px;
+}
+.icp{
+    position: fixed;
+    top: 600px;
+    left: 10%;
+    font-size: 30px;
 }

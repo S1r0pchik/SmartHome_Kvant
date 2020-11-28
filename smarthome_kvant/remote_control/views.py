@@ -4,6 +4,7 @@ from .models import on_off_position
 from . import pyboard
 from .models import trm
 from .models import rgb
+from django.http import HttpResponseRedirect
 
 def index(request):
 	return render(request, 'index.html')
@@ -68,9 +69,17 @@ def termometr(request):
 	return render(request, 'Termometr.html', {"izm": izm})
 
 def rgb_lamp(request):
-	color = rgb.objects.all()
+	color = rgb.objects.last()
 	r = color.r
 	g = color.g
 	b = color.b
-	color1 = hex(r * 65536 + g * 256 + b)
-	return render(request, 'rgb_lamp.html', {"color1": color1})
+	return render(request, 'rgb_lamp.html', {"r": r, "g": g, "b": b})
+
+def create(request):
+	if request.method == "POST":
+		col = rgb.objects.last()
+		col.r = request.POST.get("r")
+		col.g = request.POST.get("g")
+		col.b = request.POST.get("b")
+		col.save()
+	return HttpResponseRedirect("/rgb")
