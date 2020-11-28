@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from .forms import PositionLedForm
-from .models import on_off_position, Termometr
+from .models import on_off_position, Termometr, rgb
 from . import pyboard
 import time
 
@@ -80,3 +81,20 @@ def termometr(request):
 		'Table': Table
 	}
 	return render(request, 'Termometr.html', context)
+
+
+def rgb_lamp(request):
+	color = rgb.objects.last()
+	r = color.r
+	g = color.g
+	b = color.b
+	return render(request, 'rgb_lamp.html', {"r": r, "g": g, "b": b})
+
+def create(request):
+	if request.method == "POST":
+		col = rgb.objects.last()
+		col.r = request.POST.get("r")
+		col.g = request.POST.get("g")
+		col.b = request.POST.get("b")
+		col.save()
+	return HttpResponseRedirect("/rgb")

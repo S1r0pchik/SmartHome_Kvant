@@ -7,5 +7,7 @@ urlpatterns = [
     path('termometr', views.termometr, name="termometr"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
+    path('rgb', views.rgb_lamp, name="rgb"),
+    path('create/', views.create)
 ]
 

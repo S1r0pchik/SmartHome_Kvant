@@ -1,0 +1,70 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /*overflow-y: auto;*/
+}
+
+.nav_bar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 500%;
+    background-color: #2196F3;
+    font-size: 1em;
+}
+
+.image{
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    right: 50px;
+    top: calc(50% - 50px);
+}
+
+.home_btn{
+    background-color: #1976D2;
+    height: 50px;
+    width: 150px;
+    top: 30%;
+    margin-left: 40px;
+    position: absolute;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.btn{
+    outline: none;
+    cursor: pointer;
+    padding: 30px 75px 30px 75px;
+    position: fixed;
+    top: 500px;
+    left: 37%;
+    font-size: 30px;
+}
+
+.rgb_img{
+    top: 200px;
+    height: 400px;
+    width: 400px;
+    left: 4%;
+    position: fixed;
+}
+
+.table{
+    position: fixed;
+    top: 260px;
+    height: 300px;
+    width: 5%;
+    width: 15%;
+    right: 400px;
+}
+.icp{
+    position: fixed;
+    top: 200px;
+    left: 40%;
+    font-size: 30px;
+}

@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/static/CSS/rgb.css">
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <h2 style="vertical-align: middle; display: inline-block; padding-left: 40px; color: white;">Smart Home</h2>
+    <button class = "home_btn">На главную</button>
+    <img class = "image" src = "https://s.starladder.com/uploads/user_logo/e/2/f/e/f0d227746d98c02a794fcbf3b693cf8b.jpg">
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+    <img class = "rgb_img" src = "https://ledpremium.ru/upload/resize_cache/iblock/626/650_650_26a9cdfeb475445909b854c588a1af844/a_865548.jpg">
+   <form class = "icp" method="POST" action ="create/">
+       {% csrf_token %}
+        <p>
+            <label>Введите R</label><br>
+            <input type="number" name="r" />
+        </p>
+        <p>
+            <label>Введите G</label><br>
+            <input type="number" name="g" />
+        </p>
+       <p>
+            <label>Введите B</label><br>
+            <input type="number" name="b" />
+        </p>
+        <input type="submit" class = "btn" type="submit" value="Сохранить"></input>
+   </form>
+<table class = "table">
+  <colgroup>
+    <col span = "2" style="height: 200px; background-color: rgb({{ r }}, {{ g }}, {{ b }}); "><!-- С помощью этой конструкции задаем цвет фона для первых двух столбцов таблицы-->
+  </colgroup>
+  <tr>
+    <th style = "font-size: 30px; background-color: {{ color1 }}; text-align: center; height: 75px;"></th>
+  </tr>
+</table>
+{% endblock %}
