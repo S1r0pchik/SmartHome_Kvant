@@ -41,13 +41,13 @@ body {
     cursor: pointer;
     padding: 30px 75px 30px 75px;
     position: fixed;
-    top: 600px;
-    left: 6%;
+    top: 500px;
+    left: 37%;
     font-size: 30px;
 }
 
 .rgb_img{
-    top: 150px;
+    top: 200px;
     height: 400px;
     width: 400px;
     left: 4%;
@@ -56,15 +56,15 @@ body {
 
 .table{
     position: fixed;
-    top: 350px;
+    top: 260px;
     height: 300px;
     width: 5%;
     width: 15%;
-    right: 500px;
+    right: 400px;
 }
 .icp{
     position: fixed;
-    top: 600px;
-    left: 10%;
+    top: 200px;
+    left: 40%;
     font-size: 30px;
 }
