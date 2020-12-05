@@ -1,4 +1,4 @@
-from .models import on_off_position, Termometr
+from .models import on_off_position, Termometr, Led
 from django.forms import ModelForm
 
 
@@ -12,3 +12,9 @@ class TempForm(ModelForm):
     class Meta:
         model = Termometr
         fields = ["time", "temp"]
+
+
+class LedForm(ModelForm):
+    class Meta:
+        model = Led
+        fields = ["pos", "number", "name"]

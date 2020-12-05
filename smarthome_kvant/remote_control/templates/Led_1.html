@@ -4,7 +4,7 @@
 {% load static %}
 {% block header %}
     <h2 style="vertical-align: middle; display: inline-block; padding-left: 40px; color: white;">Smart Home</h2>
-    <button class = "home_btn">На главную</button>
+    <button class = "home_btn"><a href = "{% url 'home' %}" style="text-decoration: none; color: white">На главную</a></button>
     <img class = "image" src = "https://s.starladder.com/uploads/user_logo/e/2/f/e/f0d227746d98c02a794fcbf3b693cf8b.jpg">
 {% endblock %}
 
@@ -15,9 +15,10 @@
         }
     </script>
     <img class = "Led" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
-    <form method="post">
+    <form method="post" style = "align-items: center; text-align: center;">
         {% csrf_token %}
+        <h2 class = "name">{{ name }}</h2>
         <button class = "btn" name="dispatch" type="Submit">Вкл/Выкл</button>
-        <h2 class = "pos">{{ led_pos }}</h2>
+        <h2 class = "pos">{{ pos }}</h2>
     </form>
 {% endblock %}

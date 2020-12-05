@@ -7,7 +7,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    line-height: 500%;
+    height: 100px;
     background-color: #2196F3;
     font-size: 1em;
 }
@@ -35,52 +35,42 @@ body {
     font-size: 20px;
 }
 
-.temperature {
-    cursor: default;
-    outline: none;
-    border: 1px solid black;
-    border-radius: 30px;
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    margin: auto;
-}
-
 .led_1 {
     cursor: pointer;
     outline: none;
-    border: 1px solid black;
-    border-radius: 30px;
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    margin: auto;
-    margin-left: calc(25% - 200px);
+}
+
+.temperature {
+    cursor: pointer;
+    outline: none;
 }
 
 .led_2 {
     cursor: pointer;
     outline: none;
-    border: 1px solid black;
+}
+
+.add_led{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #1976D2;
+    color: white;
+    padding: 10px 20px 10px 20px;
     border-radius: 30px;
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    margin: auto;
-    margin-left: calc(75% - 75px);
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+.AddForm{
+    border-radius: 30px;
+    border: solid 1px
+    width: 50%;
+    height: 500px;
+    z-index: 1;
+    transition: 1s;
+    top: -550px;
+    margin-left: 25%;
+    position: fixed;
+    background-color: #2196F3;
 }

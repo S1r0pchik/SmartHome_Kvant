@@ -14,3 +14,12 @@ class Termometr(models.Model):
 
     def __str__(self):
        return self.time + " " + self.temp
+
+
+class Led(models.Model):
+    pos = models.TextField()
+    number = models.TextField()
+    name = models.TextField()
+
+    def __str__(self):
+       return self.pos + " " + self.number + " " + self.name
