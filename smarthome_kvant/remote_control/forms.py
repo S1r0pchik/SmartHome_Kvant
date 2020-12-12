@@ -1,5 +1,5 @@
-from .models import on_off_position, Termometr, Led
-from django.forms import ModelForm
+from .models import on_off_position, Termometr, Led, LedName
+from django.forms import ModelForm, TextInput
 
 
 class PositionLedForm(ModelForm):
@@ -18,3 +18,15 @@ class LedForm(ModelForm):
     class Meta:
         model = Led
         fields = ["pos", "number", "name"]
+
+
+class LedNameForm(ModelForm):
+    class Meta:
+        model = LedName
+        fields = ["add_name"]
+        widgets = {
+            'add_name': TextInput(attrs={
+                'placeholder': 'Название',
+                'class': 'input',
+            }),
+        }

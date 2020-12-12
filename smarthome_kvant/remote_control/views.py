@@ -1,19 +1,34 @@
 from django.shortcuts import render
-from .forms import PositionLedForm
-from .models import on_off_position, Termometr, Led
+from .forms import PositionLedForm, LedNameForm
+from .models import on_off_position, Termometr, Led, LedName
 from . import pyboard
 import time
 
 def index(request, num = 1):
 	form = Led.objects.all()
+	InputForm = LedNameForm()
+	if 'Add' in request.POST:
+		temp_form = LedNameForm(request.POST)
+		if temp_form.is_valid():
+			name = temp_form.cleaned_data['add_name']
+			try:
+				prev = int(Led.objects.last().number)
+			except:
+				prev = 0
+			database = Led(pos = 0, number = prev + 1, name = name)
+			database.save()
 	context = {
 		"num": num,
 		"Names": form,
+		"Form": InputForm
 	}
 	return render(request, 'index.html', context)
 
-
-def led_1(request, num = str(Led.objects.last()).split()[1]):
+try:
+	number = str(Led.objects.last()).split()[1]
+except:
+	number = 1
+def led_1(request, num = number):
 	# try:
 	# 	pyb = pyboard.Pyboard('COM7', 115200)
 	# 	pyb.enter_raw_repl()

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/static/CSS/Style.css">
+<link rel="stylesheet" href="/static/CSS/trush.css">
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
@@ -14,21 +14,26 @@
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
-
         function ShowAddForm(){
-            console.log(1);
+            var element = document.getElementById('AddForm');
+            element.style.top = '150px';
         }
     </script>
-    <form method = "post" class = "AddForm">
+    <form method = "post" id = "AddForm">
         {% csrf_token %}
+        <h2 class = "Instruction">Название для лампы</h2>
+        <div class = "form-control" style = "border: none; height: 50px; margin-top: 20px;">
+            {{ Form.add_name }}
+        </div>
+        <button class = "btn" name="Add" type="Submit" style = "background-color: #1976D2; border-radius: 30px;color: white;font-size: 30px;">Добавить лампу</button>
     </form>
     <div class="container">
         <div class = "row" style = "margin-top: 250px; text-align: center;">
-            <div class="col-xl col-md">
+            <div class="col-xl-4 col-md-4" style="padding: 30px;">
                 <a href = "{% url 'termometr' %}" class = "temperature"><img style = "width: 250px; height: 250px;" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png"></a>
             </div>
             {% for data in Names %}
-                <div class="col-xl col-md">
+                <div class="col-xl-4 col-md-4" style = "padding: 30px;">
                     <a href = "http://127.0.0.1:8000/led/{{ data.number }}" class = "led_1"><img style = "width: 250px; height: 250px;" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png"></a>
                     <h2 style = "text-align: center; align-items: center">{{ data.name }}</h2>
                 </div>
