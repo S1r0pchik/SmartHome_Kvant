@@ -1,4 +1,4 @@
-from .models import Termometr, Led, LedName
+from .models import Termometr, Led, LedName, PosTerm
 from django.forms import ModelForm, TextInput
 
 
@@ -24,3 +24,9 @@ class LedNameForm(ModelForm):
                 'class': 'input',
             }),
         }
+
+
+class PosTermForm(ModelForm):
+    class Meta:
+        model = PosTerm
+        fields = ["pos_term"]

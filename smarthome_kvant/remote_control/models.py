@@ -23,3 +23,10 @@ class LedName(models.Model):
 
     def __str__(self):
        return self.add_name
+
+
+class PosTerm(models.Model):
+    pos_term = models.TextField()
+
+    def __str__(self):
+       return self.pos_term

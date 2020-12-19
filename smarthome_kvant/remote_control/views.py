@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import LedNameForm
-from .models import Termometr, Led, LedName
+from .models import Termometr, Led, LedName, PosTerm
 from . import pyboard
 import time
 
@@ -85,18 +85,36 @@ def led_1(request, num = number):
 
 def termometr(request):
 	Table = Termometr.objects.order_by('-id')
+	pos = PosTerm.objects.last()
 	import time, random
-	print(time.ctime().split()[3][3:8])
-	if (len(Table) > 5):
-		if (time.ctime().split()[3][3:8] == "00:00"):
-			t = Termometr.objects.first()
-			t.delete()
-			bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
-			bd.save()
-	else:
-		if (time.ctime().split()[3][3:8] == "00:00"):
-			bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
-			bd.save()
+	if 'change_pos' in request.POST:
+		if str(pos) == '1':
+			pos.pos_term = '0'
+		elif str(pos) == '0':
+			pos.pos_term = '1'
+		pos.save()
+	if str(pos) == '1':
+		if 'Temp' in request.POST:
+			if (len(Table) >= 5):
+				t = Termometr.objects.first()
+				t.delete()
+				bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
+				bd.save()
+			else:
+				bd = Termometr(time = time.ctime().split()[3][0:5], temp = random.randint(10, 30))
+				bd.save()
+		else:
+			if (len(Table) > 5):
+				if (time.ctime().split()[3][3:8] == "00:00"):
+					t = Termometr.objects.first()
+					t.delete()
+					bd = Termometr(time=time.ctime().split()[3][0:5], temp=random.randint(10, 30))
+					bd.save()
+			else:
+				if (time.ctime().split()[3][3:8] == "00:00"):
+					bd = Termometr(time=time.ctime().split()[3][0:5], temp=random.randint(10, 30))
+					bd.save()
+	Table = Termometr.objects.order_by('-id')
 	context = {
 		'Table': Table
 	}
