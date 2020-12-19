@@ -7,18 +7,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100px;
+    line-height: 500%;
     background-color: #2196F3;
     font-size: 1em;
-}
-
-.image{
-    border-radius: 50%;
-    height: 5em;
-    width: 5em;
-    position: absolute;
-    right: 50px;
-    top: calc(50% - 40px);
 }
 
 .home_btn{
@@ -35,48 +26,58 @@ body {
     font-size: 20px;
 }
 
-.led_1 {
+.image{
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    right: 50px;
+    top: calc(50% - 40px);
+}
+
+.Led{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: -100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: auto;
+}
+
+.butn{
     cursor: pointer;
-    outline: none;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: auto;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
 }
 
-.temperature {
-    cursor: pointer;
-    outline: none;
-}
-
-.led_2 {
-    cursor: pointer;
-    outline: none;
-}
-
-.add_led{
-    border: none;
-    cursor: pointer;
-    background-color: #1976D2;
-    color: white;
-    padding: 10px 20px 10px 20px;
-    border-radius: 30px;
-    margin-left: 50px;
-    font-size: 20px;
-}
-
-#AddForm{
-    background-color: white;
-    width: 50%;
-    height: 500px;
-    top: -500px;
-    margin-left: 25%;
-    z-index: 100;
-    position: fixed;
-    border: 2px solid #2196F3;
-    border-radius: 30px;
-    transition: linear 0.3s;
-}
-
-.Instruction{
-    padding-top: 30px;
+.pos{
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    top: 425px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    margin: auto;
     font-size: 40px;
-    width: 400px;
-    margin: 0 auto;
+}
+
+.name{
+    margin-top: 160px;
+    margin-left: 20px;
+    font-size: 35px;
 }

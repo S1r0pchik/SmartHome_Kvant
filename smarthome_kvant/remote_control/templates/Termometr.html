@@ -15,6 +15,7 @@
         <h2 style = "display: inline; top: -30px; position: absolute;">Температура:</h2>
         <h2 style = "top: -30px; right: 25px; display: inline;position: absolute;">25°C</h2>
         <form method = post>
+            {% csrf_token %}
             <button style = "cursor: pointer; position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-radius: 30px; opacity: 0;"></button>
         </form>
     </div>

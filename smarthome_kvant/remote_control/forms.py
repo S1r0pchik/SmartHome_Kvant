@@ -1,11 +1,5 @@
-from .models import on_off_position, Termometr, Led, LedName
+from .models import Termometr, Led, LedName
 from django.forms import ModelForm, TextInput
-
-
-class PositionLedForm(ModelForm):
-    class Meta:
-        model = on_off_position
-        fields = ["position"]
 
 
 class TempForm(ModelForm):

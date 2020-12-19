@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .forms import PositionLedForm, LedNameForm
-from .models import on_off_position, Termometr, Led, LedName
+from .forms import LedNameForm
+from .models import Termometr, Led, LedName
 from . import pyboard
 import time
 
