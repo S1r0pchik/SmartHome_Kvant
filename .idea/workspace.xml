@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df87a061-c118-479a-81ea-ffe081e5f36a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/smarthome_kvant/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/smarthome_kvant/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/smarthome_kvant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/smarthome_kvant/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,31 +72,46 @@
       <option name="project" value="LOCAL" />
       <updated>1608394726313</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Осталось починить ВХОД и всё!">
+      <created>1608395317775</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608395317775</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Осталось починить ВХОД и всё!">
+      <created>1608395363501</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608395363501</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Надо исправить css." />
     <MESSAGE value="Исправил несколько багов. Сайт теперь конфетка просто!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил несколько багов. Сайт теперь конфетка просто!" />
+    <MESSAGE value="Осталось починить ВХОД и всё!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Осталось починить ВХОД и всё!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="509" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608392025181">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="509" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1608392025181" />
-    <state x="245" y="28" key="CommitChangelistDialog2" timestamp="1608395314848">
+    <state x="245" y="28" key="CommitChangelistDialog2" timestamp="1608395359510">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="245" y="28" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1608395314848" />
+    <state x="245" y="28" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1608395359510" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1608369334869">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1608369334869" />
-    <state x="361" y="166" key="Vcs.Push.Dialog.v2" timestamp="1608395320097">
+    <state x="361" y="166" key="Vcs.Push.Dialog.v2" timestamp="1608395369624">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1608395320097" />
+    <state x="361" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1608395369624" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1608390534623">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

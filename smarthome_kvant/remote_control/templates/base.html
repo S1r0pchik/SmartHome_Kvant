@@ -13,5 +13,247 @@
         {% block content %}
         {% endblock %}
     </div>
+    <style>
+        .preloader {
+            width: auto;
+            height: auto;
+        }
+
+        .preloader ul {
+            list-style: none;
+            display: grid;
+            width: 200px;
+            grid-template-columns: repeat(5, 1fr);
+            animation: preloader-rot 16s linear infinite;
+        }
+        @keyframes preloader-rot {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .preloader li {
+            width: 40px;
+            height: 40px;
+            background: #337AB7;
+            border-radius: 4px;
+            animation: preloader-scale 0.8s linear alternate infinite;
+        }
+        @keyframes preloader-scale {
+            100% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+        }
+        .preloader li:nth-child(1) {
+            z-index: 24;
+        }
+        .preloader li:nth-child(2) {
+            z-index: 23;
+        }
+        .preloader li:nth-child(3) {
+            z-index: 22;
+        }
+        .preloader li:nth-child(4) {
+            z-index: 21;
+        }
+        .preloader li:nth-child(5) {
+            z-index: 20;
+        }
+        .preloader li:nth-child(6) {
+            z-index: 19;
+        }
+        .preloader li:nth-child(7) {
+            z-index: 18;
+        }
+        .preloader li:nth-child(8) {
+            z-index: 17;
+        }
+        .preloader li:nth-child(9) {
+            z-index: 16;
+        }
+        .preloader li:nth-child(10) {
+            z-index: 15;
+        }
+        .preloader li:nth-child(11) {
+            z-index: 14;
+        }
+        .preloader li:nth-child(12) {
+            z-index: 13;
+        }
+        .preloader li:nth-child(13) {
+            z-index: 12;
+        }
+        .preloader li:nth-child(14) {
+            z-index: 11;
+        }
+        .preloader li:nth-child(15) {
+            z-index: 10;
+        }
+        .preloader li:nth-child(16) {
+            z-index: 9;
+        }
+        .preloader li:nth-child(17) {
+            z-index: 8;
+        }
+        .preloader li:nth-child(18) {
+            z-index: 7;
+        }
+        .preloader li:nth-child(19) {
+            z-index: 6;
+        }
+        .preloader li:nth-child(20) {
+            z-index: 5;
+        }
+        .preloader li:nth-child(21) {
+            z-index: 4;
+        }
+        .preloader li:nth-child(22) {
+            z-index: 3;
+        }
+        .preloader li:nth-child(23) {
+            z-index: 2;
+        }
+        .preloader li:nth-child(24) {
+            z-index: 1;
+        }
+        .preloader li:nth-child(25) {
+            z-index: 0;
+        }
+        .preloader li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .preloader li:nth-child(7) {
+            animation-delay: 0.3s;
+        }
+        .preloader li:nth-child(13) {
+            animation-delay: 0.5s;
+        }
+        .preloader li:nth-child(19) {
+            animation-delay: 0.7s;
+        }
+        .preloader li:nth-child(24) {
+            animation-delay: 0.9s;
+        }
+        .preloader li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .preloader li:nth-child(8) {
+            animation-delay: 0.4s;
+        }
+        .preloader li:nth-child(14) {
+            animation-delay: 0.6s;
+        }
+        .preloader li:nth-child(20) {
+            animation-delay: 0.8s;
+        }
+        .preloader li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        .preloader li:nth-child(9) {
+            animation-delay: 0.5s;
+        }
+        .preloader li:nth-child(15) {
+            animation-delay: 0.7s;
+        }
+        .preloader li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        .preloader li:nth-child(10) {
+            animation-delay: 0.6s;
+        }
+        .preloader li:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        .preloader li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .preloader li:nth-child(6) {
+            animation-delay: 0.2s;
+        }
+        .preloader li:nth-child(11) {
+            animation-delay: 0.3s;
+        }
+        .preloader li:nth-child(16) {
+            animation-delay: 0.4s;
+        }
+        .preloader li:nth-child(21) {
+            animation-delay: 0.5s;
+        }
+        .preloader li:nth-child(7) {
+            animation-delay: 0.3s;
+        }
+        .preloader li:nth-child(12) {
+            animation-delay: 0.4s;
+        }
+        .preloader li:nth-child(17) {
+            animation-delay: 0.5s;
+        }
+        .preloader li:nth-child(22) {
+            animation-delay: 0.6s;
+        }
+        .preloader li:nth-child(13) {
+            animation-delay: 0.5s;
+        }
+        .preloader li:nth-child(18) {
+            animation-delay: 0.6s;
+        }
+        .preloader li:nth-child(23) {
+            animation-delay: 0.7s;
+        }
+        .preloader li:nth-child(19) {
+            animation-delay: 0.7s;
+        }
+        .preloader li:nth-child(24) {
+            animation-delay: 0.8s;
+        }
+        .preloader li:nth-child(25) {
+            animation-delay: 0.9s;
+        }
+        .loaded_hiding .preloader {
+        transition: 0.3s opacity;
+          opacity: 0;
+        }
+        .loaded .preloader {
+          display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 500);
+        }
+    </script>
+    <div class="preloader" style = "position: fixed; top: 0; left: 0; background-color: white; width: 100%; height: 100%;">
+        <ul style = "position: fixed; top: calc(50% - 100px); left: calc(50% - 100px);">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+</div>
 </body>
 </html>
