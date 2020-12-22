@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/static/CSS/copy_led.css">
+<link rel="stylesheet" href="/static/CSS/led.css">
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
@@ -19,10 +19,10 @@
             window.history.replaceState( null, null, window.location.href );
         }
     </script>
-    <img class = "Led" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
+    <img class = "Led" src = "/static/images/{{ img }}.png" style = "width: 175px; height: 250px;">
     <form method="post" style = "align-items: center; text-align: center;">
         {% csrf_token %}
-        <h2 class = "name">{{ name }}</h2>
+        <h2 class = "name" style="margin-right: 20px;">{{ name }}</h2>
         <button class = "butn" name="dispatch" type="Submit">Вкл/Выкл</button>
         <h2 class = "pos">{{ pos }}</h2>
     </form>

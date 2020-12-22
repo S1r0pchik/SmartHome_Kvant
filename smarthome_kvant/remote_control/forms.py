@@ -22,6 +22,7 @@ class LedNameForm(ModelForm):
             'add_name': TextInput(attrs={
                 'placeholder': 'Название',
                 'class': 'input',
+                'autocomplete': 'off'
             }),
         }
 

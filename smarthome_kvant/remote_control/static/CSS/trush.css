@@ -68,7 +68,7 @@ body {
     top: -500px;
     margin-left: 25%;
     z-index: 100;
-    position: fixed;
+    position: absolute;
     border: 2px solid #2196F3;
     border-radius: 30px;
     transition: linear 0.3s;

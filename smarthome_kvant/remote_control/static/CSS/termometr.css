@@ -1,10 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
-    /*overflow-y: auto;*/
+    overflow-y: auto;
 }
 
 .nav_bar{
-    font-family: "Segoe UI";
     width: 100%;
     position: absolute;
     top: 0;
@@ -38,11 +37,11 @@ body {
 }
 
 .temp{
-    top: 200px;
-    height: 390px;
+    top: 225px;
+    height: 350px;
     width: 320px;
     left: 5%;
-    position: fixed;
+    position: absolute;
 }
 
 .butn{
@@ -51,14 +50,24 @@ body {
     border: solid 2px black;
     border-radius: 40px;
     padding: 30px 75px 30px 75px;
-    position: fixed;
+    position: absolute;
     top: 600px;
     left: 6.2%;
     font-size: 30px;
 }
 
+.info{
+    position: absolute;
+    top: 700px;
+    left: 4%;
+    font-size: 30px;
+    width: 350px;
+    text-align: center;
+    margin: 0;
+}
+
 .temp_now{
-    position: fixed;
+    position: absolute;
     border: solid 1px black;
     font-size: 40px;
     width: 60%;
@@ -71,7 +80,7 @@ body {
 
 .table{
     border-radius: 30px;
-    position: fixed;
+    position: absolute;
     top: 300px;
     width: 50%;
     right: 100px;

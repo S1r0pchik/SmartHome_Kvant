@@ -51,9 +51,8 @@ body {
 }
 
 .add_led{
-    cursor: pointer;
-    outline: none;
     border: none;
+    cursor: pointer;
     background-color: #1976D2;
     color: white;
     padding: 10px 20px 10px 20px;
@@ -62,15 +61,44 @@ body {
     font-size: 20px;
 }
 
-.AddForm{
-    border-radius: 30px;
-    border: solid 1px
+#AddForm{
+    background-color: white;
     width: 50%;
     height: 500px;
-    z-index: 10;
-    transition: 1s;
-    top: 0px;
+    top: -500px;
     margin-left: 25%;
-    position: fixed;
-    background-color: black;
+    z-index: 100;
+    position: absolute;
+    border: 2px solid #2196F3;
+    border-radius: 30px;
+    transition: linear 0.3s;
+}
+
+.Instruction{
+    padding-top: 125px;
+    font-size: 40px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.input{
+    margin-left: 25%;
+    height: 50px;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+}
+
+.btn{
+    position: absolute;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+    font-size: 30px;
+    width: 300px;
+    height: 100px;
+    margin-left: calc(50% - 150px);
 }

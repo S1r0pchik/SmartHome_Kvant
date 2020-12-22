@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/static/CSS/copy_termometr.css">
+<link rel="stylesheet" href="/static/CSS/termometr.css">
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
@@ -23,6 +23,7 @@
         {% csrf_token %}
         <button class = "butn" name = "change_pos">Вкл/Выкл</button>
     </form>
+    <h2 class = "info">{{ Pos }}</h2>
     <div class = "temp_now">
         <h2 style = "display: inline; top: -30px; position: absolute;">Температура:</h2>
         <h2 style = "top: -30px; right: 25px; display: inline;position: absolute;">25°C</h2>

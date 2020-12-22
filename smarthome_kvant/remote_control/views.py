@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import LedNameForm
 from .models import Termometr, Led, LedName, PosTerm
+from .moduls import *
 from . import pyboard
 import time
 
@@ -28,58 +29,51 @@ try:
 	number = str(Led.objects.last()).split()[1]
 except:
 	number = 1
+
 def led_1(request, num = number):
+	connected = True
 	# try:
-	# 	pyb = pyboard.Pyboard('COM7', 115200)
-	# 	pyb.enter_raw_repl()
+	# 	try_to_connect()
+	#	connected = True
 	# except:
 	# 	position = "Ошибка подключения"
 	# 	context = {
 	# 		'led_pos': position,
 	# 	}
-	# 	return render(request, 'Led_1.html', context)
-	form = Led.objects.get(number = num)
-	if str(form.pos) == '1':
-		mod = 1
-	if str(form.pos) == '0':
-		mod = 0
-	if 'dispatch' in request.POST:
-		Led.objects.get(number = num)
+	#	connected = False
+	if (connected == True):
+		form = Led.objects.get(number = num)
 		if str(form.pos) == '1':
-			mod = 0
-		if str(form.pos) == '0':
 			mod = 1
-		bd = Led.objects.get(number = num)
-		bd.pos = mod
-		bd.save()
-	# 	try:
-	# 		pyb.exec_("from pyb import Pin")
-	# 		pyb.exec_("p_out = [Pin(i, Pin.OUT_PP) for i in ('D3','D5','D6') ]")
-	# 	except:
-	# 		pass
-	# 	if mod == 0:
-	# 		try:
-	# 			pyb.exec_("p_out[0].off()")
-	# 			pyb.exec_("p_out[1].off()")
-	# 			pyb.exec_("p_out[2].off()")
-	# 			position = "Лампа сейчас выключена"
-	# 		except:
-	# 			pass
-	# 	if mod == 1:
-	# 		try:
-	# 			pyb.exec_("p_out[0].on()")
-	# 			pyb.exec_("p_out[1].on()")
-	# 			pyb.exec_("p_out[2].on()")
-	# 		except:
-	# 			pass
-	# 		position = "Лампа сейчас включена"
-	if (mod == 0):
-		position = "Лампа сейчас выключена"
-	if (mod == 1):
-		position = "Лампа сейчас включена"
+		if str(form.pos) == '0':
+			mod = 0
+		if 'dispatch' in request.POST:
+			Led.objects.get(number = num)
+			if str(form.pos) == '1':
+				mod = 0
+			if str(form.pos) == '0':
+				mod = 1
+			bd = Led.objects.get(number = num)
+			bd.pos = mod
+			bd.save()
+		# 	try:
+		# 		connecting()
+		# 	except:
+		# 		pass
+		# 	if mod == 0:
+		# 		off_led()
+		# 		position = "Лампа сейчас выключена"
+		# 	if mod == 1:
+		# 		on_led()
+		# 		position = "Лампа сейчас включена"
+		if (mod == 0):
+			position = "Лампа сейчас выключена"
+		if (mod == 1):
+			position = "Лампа сейчас включена"
 	context = {
 		"pos": position,
-		"name": Led.objects.get(number = num).name
+		"name": Led.objects.get(number = num).name,
+		"img": Led.objects.get(number = num).pos
 	}
 	return render(request, 'Led_1.html', context)
 
@@ -114,8 +108,13 @@ def termometr(request):
 				if (time.ctime().split()[3][3:8] == "00:00"):
 					bd = Termometr(time=time.ctime().split()[3][0:5], temp=random.randint(10, 30))
 					bd.save()
+	if (str(pos) == '0'):
+		Pos = "Термометр сейчас выключен"
+	if (str(pos) == '1'):
+		Pos = "Термометр сейчас включен"
 	Table = Termometr.objects.order_by('-id')
 	context = {
-		'Table': Table
+		'Table': Table,
+		'Pos': Pos
 	}
 	return render(request, 'Termometr.html', context)

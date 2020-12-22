@@ -56,6 +56,18 @@ body {
     font-size: 30px;
 }
 
+.info{
+    outline: none;
+    cursor: pointer;
+    border: solid 2px black;
+    border-radius: 40px;
+    padding: 30px 75px 30px 75px;
+    position: fixed;
+    top: 600px;
+    left: 6.2%;
+    font-size: 30px;
+}
+
 .temp_now{
     position: fixed;
     border: solid 1px black;
