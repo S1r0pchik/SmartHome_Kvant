@@ -9,7 +9,7 @@
     <button class = "add_led" style = "margin-left: 20px;"><a style="text-decoration: none; color: white" href = "{% url 'signup' %}">Регистрация</a></button>
     <button class = "add_led" style = "margin-left: 20px;"><a style="text-decoration: none; color: white" href = "{% url 'login' %}">Вход</a></button>
     {% if user.is_authenticated %}
-         <h2 style="text-align: right; margin-top: -40px; margin-right: 200px; color: white">{{ user.username }}</h2>
+         <h4 style="text-align: right; margin-top: -40px; margin-right: 200px; color: white">{{ user.username }}</h4>
          <h6 style="text-align: right; margin-top: -20px; margin-right: 140px"><a style="color: black;" href="{% url 'logout' %}">Выйти</a></h6>
         {% else %}
     {% endif %}
