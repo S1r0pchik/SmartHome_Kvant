@@ -1,4 +1,7 @@
 {% extends 'index.html' %}
+{% load account socialaccount %}
+{% get_providers as socialaccount_providers %}
+
 {% block content %}
 <br><br><br><br>
 <h2>Вход</h2>
@@ -8,4 +11,5 @@
   {{ form.as_p }}
   <button type="submit">Войти</button>
 </form>
+<a href={% provider_login_url "vk" method="oauth2" %}> Войти через VK </a>
 {% endblock %}

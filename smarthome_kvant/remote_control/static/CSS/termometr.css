@@ -4,6 +4,7 @@ body {
 }
 
 .nav_bar{
+    font-family: "Segoe UI";
     width: 100%;
     position: absolute;
     top: 0;
@@ -44,7 +45,7 @@ body {
     position: fixed;
 }
 
-.btn{
+.butn{
     outline: none;
     cursor: pointer;
     border: solid 2px black;

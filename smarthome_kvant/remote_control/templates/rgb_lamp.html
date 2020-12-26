@@ -10,7 +10,7 @@
 
 {% block content %}
 {% csrf_token %}
-    <img class = "rgb_img" src = "https://ledpremium.ru/upload/resize_cache/iblock/626/650_650_26a9cdfeb475445909b854c588a1af844/a_865548.jpg">
+<a href = "{% url 'rgb' %}" class = "rgb"><img style = "width: 250px; height: 350px;" src = "https://elquanta.ru/wp-content/uploads/2018/04/1.lenta-rgb.jpg"></a>
    <form class = "icp" method="POST" action ="create/">
        {% csrf_token %}
         <p>

@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import on_off_position, Termometr, rgb
+from .models import Termometr, Led, PosTerm, Rgb
 
-admin.site.register(on_off_position),
-admin.site.register(Termometr)
-admin.site.register(rgb)
+admin.site.register(Termometr),
+admin.site.register(Led),
+admin.site.register(PosTerm)
+admin.site.register(Rgb)

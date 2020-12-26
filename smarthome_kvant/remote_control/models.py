@@ -1,13 +1,6 @@
 from django.db import models
 
 
-class on_off_position(models.Model):
-    position = models.TextField()
-
-    def __str__(self):
-       return self.position
-
-
 class Termometr(models.Model):
     time = models.TextField()
     temp = models.TextField()
@@ -15,14 +8,33 @@ class Termometr(models.Model):
     def __str__(self):
        return self.time + " " + self.temp
 
-class trm(models.Model):
-    izm1 = models.IntegerField()
-    izm2 = models.IntegerField()
-    izm3 = models.IntegerField()
-    izm4 = models.IntegerField()
-    izm5 = models.IntegerField()
 
-class rgb(models.Model):
-    r = models.IntegerField()
-    g = models.IntegerField()
-    b = models.IntegerField()
+class Led(models.Model):
+    pos = models.TextField()
+    number = models.TextField()
+    name = models.TextField()
+
+    def __str__(self):
+       return self.pos + " " + self.number + " " + self.name
+
+
+class LedName(models.Model):
+    add_name = models.TextField()
+
+    def __str__(self):
+       return self.add_name
+
+
+class PosTerm(models.Model):
+    pos_term = models.TextField()
+
+    def __str__(self):
+       return self.pos_term
+
+class Rgb(models.Model):
+    r = models.IntegerField(null = True)
+    g = models.IntegerField(null = True)
+    b = models.IntegerField(null = True)
+
+    def __srt__(self):
+        return self.r + ' ' + self.g + ' ' + self.b
