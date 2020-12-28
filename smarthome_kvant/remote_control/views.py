@@ -20,7 +20,8 @@ def index(request, num = 1):
 	context = {
 		"num": num,
 		"Names": form,
-		"Form": InputForm
+		"Form": InputForm,
+		"title": "Главная страницв | Smart Home"
 	}
 	return render(request, 'index.html', context)
 
@@ -79,7 +80,8 @@ def led_1(request, num = number):
 		position = "Лампа сейчас включена"
 	context = {
 		"pos": position,
-		"name": Led.objects.get(number = num).name
+		"name": Led.objects.get(number = num).name,
+		"title": "Управление лампочками | Smart Home"
 	}
 	return render(request, 'Led_1.html', context)
 
@@ -116,7 +118,8 @@ def termometr(request):
 					bd.save()
 	Table = Termometr.objects.order_by('-id')
 	context = {
-		'Table': Table
+		'Table': Table,
+		"title": "Управление термометром | Smart Home"
 	}
 	return render(request, 'Termometr.html', context)
 
@@ -125,7 +128,13 @@ def rgb_lamp(request):
 	r = color.r
 	g = color.g
 	b = color.b
-	return render(request, 'rgb_lamp.html', {"r": r, "g": g, "b": b})
+	context = {
+		"r": r,
+		"g": g,
+		"b": b,
+		"title": "Управление RGB лентой | Smart Home"
+	}
+	return render(request, 'rgb_lamp.html', )
 
 def create(request):
 	if request.method == "POST":

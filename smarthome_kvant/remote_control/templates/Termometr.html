@@ -18,6 +18,7 @@
             window.history.replaceState( null, null, window.location.href );
         }
     </script>
+    {% if user.is_authenticated %}
     <img class = "temp" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png">
     <form method = post>
         {% csrf_token %}
@@ -47,4 +48,13 @@
           </tr>
     {% endfor %}
 </table>
+{% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Упс, вы не зашли в систему! </h1>
+{% endif %}
 {% endblock %}

@@ -19,6 +19,7 @@
             window.history.replaceState( null, null, window.location.href );
         }
     </script>
+    {% if user.is_authenticated %}
     <img class = "Led" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
     <form method="post" style = "align-items: center; text-align: center;">
         {% csrf_token %}
@@ -26,4 +27,13 @@
         <button class = "butn" name="dispatch" type="Submit">Вкл/Выкл</button>
         <h2 class = "pos">{{ pos }}</h2>
     </form>
+    {% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Упс, вы не зашли в систему! </h1>
+    {% endif %}
 {% endblock %}

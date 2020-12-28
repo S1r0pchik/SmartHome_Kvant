@@ -7,12 +7,20 @@
 {% endblock %}
 
 {% block content %}>
+{% if user.is_authenticated %}
     <img class = "Led" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png">
     <form method="post">
         {% csrf_token %}
         <button class = "btn" type="submit" position="on">Вкл/Выкл</button>
-
     </form>
+{% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Упс, вы не зашли в систему! </h1>
 
 {% endblock %}
 {% block f %}

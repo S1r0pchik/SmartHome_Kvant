@@ -10,6 +10,7 @@
 
 {% block content %}
 {% csrf_token %}
+{% if user.is_authenticated %}
 <a href = "{% url 'rgb' %}" class = "rgb"><img style = "width: 250px; height: 350px;" src = "https://elquanta.ru/wp-content/uploads/2018/04/1.lenta-rgb.jpg"></a>
    <form class = "icp" method="POST" action ="create/">
        {% csrf_token %}
@@ -35,4 +36,13 @@
     <th style = "font-size: 30px; background-color: {{ color1 }}; text-align: center; height: 75px;"></th>
   </tr>
 </table>
+{% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Упс, вы не зашли в систему! </h1>
+{% endif %}
 {% endblock %}
