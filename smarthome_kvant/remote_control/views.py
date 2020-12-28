@@ -134,7 +134,7 @@ def rgb_lamp(request):
 		"b": b,
 		"title": "Управление RGB лентой | Smart Home"
 	}
-	return render(request, 'rgb_lamp.html', )
+	return render(request, 'rgb_lamp.html', context)
 
 def create(request):
 	if request.method == "POST":
