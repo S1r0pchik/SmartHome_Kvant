@@ -3,6 +3,7 @@ from .forms import LedNameForm
 from .models import Termometr, Led, LedName, PosTerm, Rgb
 from . import pyboard
 import time
+import serial
 
 def index(request, num = 1):
 	form = Led.objects.all()
@@ -30,6 +31,21 @@ try:
 except:
 	number = 1
 def led_1(request, num = number):
+	"""
+	Для использования микроконтроллером (arduino, pyboard)
+	"""
+	#try:
+	#	connected = False
+	#	ser = serial.Serial("COM3", 9600)
+	#	while not connected:
+	#		serin = ser.read()
+	#		connected = True
+	#	ser.write(1)
+	#	while ser.read() == '1':
+	#		ser.read()
+	#	ser.close()
+	#except:
+	#	pass
 	# try:
 	# 	pyb = pyboard.Pyboard('COM7', 115200)
 	# 	pyb.enter_raw_repl()

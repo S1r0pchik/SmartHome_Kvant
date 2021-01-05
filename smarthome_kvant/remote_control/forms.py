@@ -1,4 +1,4 @@
-from .models import Termometr, Led, LedName, PosTerm
+from .models import Termometr, Led, LedName, PosTerm, Profile
 from django.forms import ModelForm, TextInput
 
 
@@ -30,3 +30,14 @@ class PosTermForm(ModelForm):
     class Meta:
         model = PosTerm
         fields = ["pos_term"]
+
+class ProfileForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = (
+            'external_id',
+            'name',
+        )
+        widgets = {
+            'name': TextInput
+        }
