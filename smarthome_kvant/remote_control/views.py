@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import LedNameForm
 from .models import Termometr, Led, LedName, PosTerm
-from . import pyboard
+from . import pyboard, LED
 import time
 
 def index(request, num = 1):
@@ -15,7 +15,7 @@ def index(request, num = 1):
 				prev = int(Led.objects.last().number)
 			except:
 				prev = 0
-			database = Led(pos = 0, number = prev + 1, name = name)
+			database = Led(pos=0, number=prev + 1, name=name)
 			database.save()
 	context = {
 		"num": num,
@@ -24,58 +24,62 @@ def index(request, num = 1):
 	}
 	return render(request, 'index.html', context)
 
+
 try:
 	number = str(Led.objects.last()).split()[1]
 except:
 	number = 1
+
+
 def led_1(request, num = number):
-	# try:
-	# 	pyb = pyboard.Pyboard('COM7', 115200)
-	# 	pyb.enter_raw_repl()
-	# except:
-	# 	position = "Ошибка подключения"
-	# 	context = {
-	# 		'led_pos': position,
-	# 	}
-	# 	return render(request, 'Led_1.html', context)
-	form = Led.objects.get(number = num)
+	try:
+		pyb = pyboard.Pyboard('COM19', 115200)
+		pyb.enter_raw_repl()
+		print("successful connection")
+	except:
+		position = "Ошибка подключения"
+		context = {
+			'led_pos': position,
+		}
+		return render(request, 'Led_1.html', context)
+
+	form = Led.objects.get(number=num)
 	if str(form.pos) == '1':
 		mod = 1
 	if str(form.pos) == '0':
 		mod = 0
+
 	if 'dispatch' in request.POST:
-		Led.objects.get(number = num)
+		Led.objects.get(number=num)
 		if str(form.pos) == '1':
 			mod = 0
 		if str(form.pos) == '0':
 			mod = 1
-		bd = Led.objects.get(number = num)
+		bd = Led.objects.get(number=num)
 		bd.pos = mod
 		bd.save()
-	# 	try:
-	# 		pyb.exec_("from pyb import Pin")
-	# 		pyb.exec_("p_out = [Pin(i, Pin.OUT_PP) for i in ('D3','D5','D6') ]")
-	# 	except:
-	# 		pass
-	# 	if mod == 0:
-	# 		try:
-	# 			pyb.exec_("p_out[0].off()")
-	# 			pyb.exec_("p_out[1].off()")
-	# 			pyb.exec_("p_out[2].off()")
-	# 			position = "Лампа сейчас выключена"
-	# 		except:
-	# 			pass
-	# 	if mod == 1:
-	# 		try:
-	# 			pyb.exec_("p_out[0].on()")
-	# 			pyb.exec_("p_out[1].on()")
-	# 			pyb.exec_("p_out[2].on()")
-	# 		except:
-	# 			pass
-	# 		position = "Лампа сейчас включена"
-	if (mod == 0):
+
+		try:
+			pyb.exec_("from pyb import Pin")
+			pyb.exec_("LEDS = [Pin(i, Pin.OUT_PP) for i in ('D3','D5','D6') ]")
+		except:
+			pass
+		if mod == 0:
+			try:
+				pyb.exec_("LEDS[{0}].off()".format(int(form.number) - 1))
+				position = "Лампа сейчас выключена"
+			except:
+				pass
+		if mod == 1:
+			try:
+				pyb.exec_("LEDS[{0}].on()".format(int(form.number) - 1))
+			except:
+				pass
+			position = "Лампа сейчас включена"
+
+	if mod == 0:
 		position = "Лампа сейчас выключена"
-	if (mod == 1):
+	if mod == 1:
 		position = "Лампа сейчас включена"
 	context = {
 		"pos": position,
