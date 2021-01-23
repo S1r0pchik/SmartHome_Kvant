@@ -36,7 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'remote_control'
+    'django.contrib.sites',
+    'remote_control',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.vk',
 ]
 
 MIDDLEWARE = [
@@ -118,5 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR, 'static')]
-
+SITE_ID = 1
 STATIC_URL = '/static/'

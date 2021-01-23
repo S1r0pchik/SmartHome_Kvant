@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import LedNameForm
+from django.contrib.auth.models import User
 from .models import Termometr, Led, LedName, PosTerm
 from . import pyboard, LED
 import time
@@ -83,7 +84,7 @@ def led_1(request, num = number):
 		position = "Лампа сейчас включена"
 	context = {
 		"pos": position,
-		"name": Led.objects.get(number = num).name
+		"name": Led.objects.get(number=num).name
 	}
 	return render(request, 'Led_1.html', context)
 
