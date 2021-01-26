@@ -13,10 +13,9 @@ class Led(models.Model):
     pos = models.TextField()
     number = models.TextField()
     name = models.TextField()
-    person = models.TextField()
 
     def __str__(self):
-       return self.pos + " " + self.number + " " + self.name + " " + self.person
+       return self.pos + " " + self.number + " " + self.name
 
 
 class LedName(models.Model):

@@ -11,7 +11,7 @@ class TempForm(ModelForm):
 class LedForm(ModelForm):
     class Meta:
         model = Led
-        fields = ["pos", "number", "name", "person"]
+        fields = ["pos", "number", "name"]
 
 
 class LedNameForm(ModelForm):
