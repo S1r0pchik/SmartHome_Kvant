@@ -16,23 +16,19 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df87a061-c118-479a-81ea-ffe081e5f36a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/Led_dark.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/Style_dark.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Led_dark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Termometr_dark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/index_dark.html" afterDir="false" />
+    <list default="true" id="df87a061-c118-479a-81ea-ffe081e5f36a" name="Default Changelist" comment="Нужно сделать фронт тнрмометра">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/Style_light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/trush.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/trush.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Led_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Led_light.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Termometr.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Termometr_light.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/index_light.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/termometr_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/static/CSS/termometr_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Termometr_dark.html" beforeDir="false" afterPath="$PROJECT_DIR$/smarthome_kvant/remote_control/templates/Termometr_dark.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608395363501</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Нужно сделать фронт тнрмометра">
+      <created>1614703318978</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614703318978</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,7 +124,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -132,12 +147,14 @@
     <MESSAGE value="Надо исправить css." />
     <MESSAGE value="Исправил несколько багов. Сайт теперь конфетка просто!" />
     <MESSAGE value="Осталось починить ВХОД и всё!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Осталось починить ВХОД и всё!" />
+    <MESSAGE value="Нужно сделать фронт тнрмометра" />
+    <option name="LAST_COMMIT_MESSAGE" value="Нужно сделать фронт тнрмометра" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="509" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608392025181">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="509" y="225" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614703236417">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="509" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1614703236417" />
     <state x="509" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1608392025181" />
     <state x="245" y="28" key="CommitChangelistDialog2" timestamp="1608395359510">
       <screen x="0" y="0" width="1536" height="864" />
@@ -148,9 +165,10 @@
     </state>
     <state x="549" y="179" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614695855543" />
     <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1608369334869" />
-    <state x="361" y="166" key="Vcs.Push.Dialog.v2" timestamp="1608395369624">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="361" y="158" key="Vcs.Push.Dialog.v2" timestamp="1614703322523">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="361" y="158" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614703322523" />
     <state x="361" y="166" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1608395369624" />
     <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1611415727671">
       <screen x="0" y="0" width="1536" height="824" />
