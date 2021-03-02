@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/static/CSS/copy_termometr.css">
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <h2 style="font-size: 32px; margin-top: 10px; display: inline-block; padding-left: 40px; color: white;"><a style="text-decoration: none; color: white" href = "{% url 'home' %}">Smart Home</a></h2>
+    {% if user.is_authenticated %}
+         <h2 style="font-size: 30px; text-align: right; margin-top: -101px; margin-right: 200px; color: white">{{ user.username }}</h2>
+         <h6 style="font-size: 15px; text-align: right; margin-top: -88px; margin-right: 140px"><a style="color: black; text-decoration: none;" href="{% url 'logout' %}">Выйти</a></h6>
+        {% else %}
+    {% endif %}
+    <img class = "image" src = "https://s.starladder.com/uploads/user_logo/e/2/f/e/f0d227746d98c02a794fcbf3b693cf8b.jpg">
+{% endblock %}
+
+{% block content %}
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+    <img class = "temp" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png">
+    <form method = post>
+        {% csrf_token %}
+        <button class = "butn" name = "change_pos">Вкл/Выкл</button>
+    </form>
+    <div class = "temp_now">
+        <h2 style = "display: inline; top: -30px; position: absolute;">Температура:</h2>
+        <h2 style = "top: -30px; right: 25px; display: inline;position: absolute;">25°C</h2>
+        <form method = post>
+            {% csrf_token %}
+            <button name = 'Temp' style = "cursor: pointer; position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-radius: 30px; opacity: 0;"></button>
+        </form>
+    </div>
+<table class = "table">
+  <colgroup>
+    <col span = "2" style="height: 200px; background-color: C4C4C4; border: solid 1px black;">
+    <col style="background-color: C4C4C4; border: solid 1px black;">
+      <tr>
+        <th style = "font-size: 30px; text-align: center; height: 75px; border-radius: 30px 0 0 0;">ВРЕМЯ</th>
+        <th style = "font-size: 30px; text-align: center; height: 75px; border-radius: 0 30px 0 0;">ТЕМПЕРАТУРА</th>
+      </tr>
+  </colgroup>
+    {% for el in Table %}
+          <tr>
+            <td class = "item">{{ el.time }}</td>
+            <td class = "item">{{ el.temp }}°C</td>
+          </tr>
+    {% endfor %}
+</table>
+{% endblock %}

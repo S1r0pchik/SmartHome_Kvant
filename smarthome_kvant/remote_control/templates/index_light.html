@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/static/CSS/trush.css">
+<link rel="stylesheet" href="/static/CSS/Style.css">
 {% extends 'base.html' %}
 {% load static %}
 {% block header %}
@@ -32,7 +32,9 @@
     </script>
     <form method = "post" id = "AddForm">
         {% csrf_token %}
-        <button style = "width: 60px; height: 60px; right: 20px; top: 20px; position: absolute; outline: none; border: none; cursor: pointer;" onclick = "CloseAddForm()"><img style = "width: 50px; height: 50px; position: absolute; right: 2.5px; top: 3px;" src = "https://w7.pngwing.com/pngs/66/748/png-transparent-hatstand-nonwoven-fabric-zero-waste-towel-red-cross-miscellaneous-angle-white.png"></button>
+        <button style = "background-color: white; width: 60px; height: 60px; right: 20px; top: 20px; position: absolute; outline: none; border: none; cursor: pointer;" onclick = "CloseAddForm()">
+            <img style = "width: 50px; height: 50px; position: absolute; right: 2.5px; top: 3px; background-color: white;" src="https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/cross-512.png">
+        </button>
         <h2 class = "Instruction">Название для лампы</h2>
         <div class = "form-control" style = "border: none; height: 50px; margin-top: 20px;">
             {{ Form.add_name }}

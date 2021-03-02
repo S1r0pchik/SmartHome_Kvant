@@ -23,7 +23,7 @@ def index(request, num = 1):
 		"Names": form,
 		"Form": InputForm
 	}
-	return render(request, 'index.html', context)
+	return render(request, 'index_dark.html', context)
 
 
 try:
@@ -32,9 +32,9 @@ except:
 	number = 1
 
 
-def led_1(request, num = number):
+def led_1(request, num=number):
 	try:
-		pyb = pyboard.Pyboard('COM19', 115200)
+		pyb = pyboard.Pyboard('COM20', 115200)
 		pyb.enter_raw_repl()
 		print("successful connection")
 	except:
@@ -42,7 +42,7 @@ def led_1(request, num = number):
 		context = {
 			'led_pos': position,
 		}
-		return render(request, 'Led_1.html', context)
+		return render(request, 'Led_dark.html', context)
 
 	form = Led.objects.get(number=num)
 	if str(form.pos) == '1':
@@ -86,17 +86,22 @@ def led_1(request, num = number):
 		"pos": position,
 		"name": Led.objects.get(number=num).name
 	}
-	return render(request, 'Led_1.html', context)
+	return render(request, 'Led_dark.html', context)
 
 def termometr(request):
 	Table = Termometr.objects.order_by('-id')
-	pos = PosTerm.objects.last()
+	pos = PosTerm.objects.first()
 	import time, random
+
+	if pos == None:
+		data = PosTerm(pos_term='0')
+		data.save()
+
 	if 'change_pos' in request.POST:
-		if str(pos) == '1':
-			pos.pos_term = '0'
-		elif str(pos) == '0':
+		if str(pos) == '0':
 			pos.pos_term = '1'
+		else:
+			pos.pos_term = '0'
 		pos.save()
 	if str(pos) == '1':
 		if 'Temp' in request.POST:
@@ -123,4 +128,4 @@ def termometr(request):
 	context = {
 		'Table': Table
 	}
-	return render(request, 'Termometr.html', context)
+	return render(request, 'Termometr_dark.html', context)

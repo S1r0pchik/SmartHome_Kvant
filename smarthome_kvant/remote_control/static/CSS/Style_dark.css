@@ -2,17 +2,23 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.body {
+    background-color: #333333;
+}
+
 .nav_bar{
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     height: 100px;
-    background-color: #2196F3;
+    background-color: #2b2b2b;
     font-size: 1em;
+    color: D9D9D9;
 }
 
 .image{
+    background-color: #002342;
     border-radius: 50%;
     height: 5em;
     width: 5em;
@@ -50,27 +56,64 @@ body {
     outline: none;
 }
 
-.add_led{
+.add_led {
+    border: none;
     cursor: pointer;
     outline: none;
-    border: none;
-    background-color: #1976D2;
+    background-color: #2b2b2b;
     color: white;
     padding: 10px 20px 10px 20px;
     border-radius: 30px;
     margin-left: 50px;
     font-size: 20px;
+    transition: linear 0.3s;
 }
 
-.AddForm{
-    border-radius: 30px;
-    border: solid 1px
+.add_led:hover {
+    background-color: #3D3D3D;
+}
+
+#AddForm{
+    background-color: #002342;
+    color: white;
     width: 50%;
     height: 500px;
-    z-index: 10;
-    transition: 1s;
-    top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    top: 150px;
     margin-left: 25%;
+    z-index: 100;
     position: fixed;
-    background-color: black;
+    border: 2px solid #001930;;
+    border-radius: 30px;
+    transition: linear 0.3s;
+}
+
+.Instruction{
+    padding-top: 125px;
+    font-size: 40px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.input{
+    margin-left: 25%;
+    height: 50px;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+}
+
+.btn{
+    position: absolute;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+    font-size: 30px;
+    width: 300px;
+    height: 100px;
+    margin-left: calc(50% - 150px);
 }
