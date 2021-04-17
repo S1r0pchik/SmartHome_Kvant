@@ -1,8 +1,16 @@
-{% extends 'index.html' %}
+{% extends 'index_dark.html' %}
 {% block content %}
 <br><br><br><br>
 <h2>Вход</h2>
 <br>
+<style>
+  * {
+    color: white;
+  }
+  input {
+    color: black;
+  }
+</style>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}

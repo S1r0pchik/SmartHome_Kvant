@@ -18,12 +18,13 @@
             window.history.replaceState( null, null, window.location.href );
         }
     </script>
+    <h2 style="top: 700px; color: white; position: fixed; left: 7%; width: 260px; text-align: center">{{ Pos }}</h2>
     <img class = "temp" src = "https://i.exclipart.com/images/thermometer-icon-png-2.png">
     <form method = post>
         {% csrf_token %}
         <button class = "butn" name = "change_pos">Вкл/Выкл</button>
     </form>
-    <div class = "temp_now">
+    <div class = "temp_now" style="border-color: white; color: white">
         <h2 style = "display: inline; top: -30px; position: absolute;">Температура:</h2>
         <h2 style = "top: -30px; right: 25px; display: inline;position: absolute;">25°C</h2>
         <form method = post>

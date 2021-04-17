@@ -1,4 +1,4 @@
-from .models import Termometr, Led, LedName, PosTerm
+from .models import Termometr, Led, LedName, PosTerm, Users
 from django.forms import ModelForm, TextInput
 
 
@@ -13,6 +13,10 @@ class LedForm(ModelForm):
         model = Led
         fields = ["pos", "number", "name"]
 
+class UserForm(ModelForm):
+    class Meta:
+        model = Users
+        fields = ["user"]
 
 class LedNameForm(ModelForm):
     class Meta:
@@ -21,6 +25,7 @@ class LedNameForm(ModelForm):
         widgets = {
             'add_name': TextInput(attrs={
                 'placeholder': 'Название',
+                'autocomplete': 'off',
                 'class': 'input',
             }),
         }

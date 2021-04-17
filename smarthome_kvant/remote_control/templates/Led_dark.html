@@ -22,8 +22,8 @@
     <img class = "Led" src = "https://clipart-best.com/img/lamp/lamp-clip-art-24.png">
     <form method="post" style = "align-items: center; text-align: center;">
         {% csrf_token %}
-        <h2 class = "name">{{ name }}</h2>
+        <h2 class = "name" style="color: white">{{ name }}</h2>
         <button class = "butn" name="dispatch" type="Submit">Вкл/Выкл</button>
-        <h2 class = "pos">{{ pos }}</h2>
+        <h2 class = "pos" style="color: white">{{ pos }}</h2>
     </form>
 {% endblock %}

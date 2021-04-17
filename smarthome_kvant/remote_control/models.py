@@ -30,3 +30,9 @@ class PosTerm(models.Model):
 
     def __str__(self):
        return self.pos_term
+
+class Users(models.Model):
+    user = models.TextField()
+
+    def __str__(self):
+       return self.user
