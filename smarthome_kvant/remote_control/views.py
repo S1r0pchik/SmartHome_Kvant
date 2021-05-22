@@ -34,18 +34,22 @@ def led_1(request, num = number):
 	"""
 	Для использования микроконтроллером (arduino, pyboard)
 	"""
-	#try:
-	#	connected = False
-	#	ser = serial.Serial("COM3", 9600)
-	#	while not connected:
-	#		serin = ser.read()
-	#		connected = True
-	#	ser.write(1)
-	#	while ser.read() == '1':
-	#		ser.read()
-	#	ser.close()
-	#except:
-	#	pass
+	try:
+		connected = False
+		ser = serial.Serial("COM3", 9600)
+		while not connected:
+			serin = ser.read()
+			connected = True
+		ser.write(1)
+		while ser.read() == '1':
+			ser.read()
+		ser.close()
+	except:
+		position = 'Ошибка подключения'
+		context = {
+	 		'led_pos': position,
+	 	}
+		return render(request, 'Led_1.html', context)
 	# try:
 	# 	pyb = pyboard.Pyboard('COM7', 115200)
 	# 	pyb.enter_raw_repl()
@@ -102,6 +106,19 @@ def led_1(request, num = number):
 	return render(request, 'Led_1.html', context)
 
 def termometr(request):
+	#try:
+	#	connected = False
+	#	ser = serial.Serial("COM3", 9600)
+	#	while not connected:
+	#		serin = ser.read()
+	#		connected = True
+	#	ser.write(1)
+	#	while ser.read() == '2':
+	#		ser.read()
+	#		print(ser.readline())
+	#	ser.close()
+	#except:
+	#	pass
 	Table = Termometr.objects.order_by('-id')
 	pos = PosTerm.objects.last()
 	import time, random
