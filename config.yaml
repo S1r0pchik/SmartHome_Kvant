@@ -1,8 +1,7 @@
-name: &name "QuartzNet15x5"
-sample_rate: &sample_rate 16000
-repeat: &repeat 1
-dropout: &dropout 0.0
-separable: &separable true
+config.yaml:
+name: &amp;name "Jasper10x5"
+model:
+sample_rate: &amp;sample_rate 16000
 labels: &amp;labels [" ", "a", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л",
                    "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ь", "э", "ю", "я", "'"]
 
@@ -29,11 +28,8 @@ model:
   preprocessor:
     _target_: nemo.collections.asr.modules.AudioToMelSpectrogramPreprocessor
     normalize: "per_feature"
-    window_size: 0.02
     sample_rate: *sample_rate
-    window_stride: 0.01
-    window: "hann"
-    features: &n_mels 64
+    features: &amp;n_mels 64
     n_fft: 512
     frame_splicing: 1
     dither: 0.00001
